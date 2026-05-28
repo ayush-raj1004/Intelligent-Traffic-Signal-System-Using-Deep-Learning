@@ -1,0 +1,12 @@
+{
+  "name": "Intelligent Traffic Management System",
+  "description": "An AI-powered system for real-time traffic density analysis, signal optimization using reinforcement learning, and emergency vehicle priority management.",
+  "requestFramePermissions": [
+    "camera"
+  ],
+  "majorCapabilities": [
+    "Computer Vision",
+    "Real-time Data Processing",
+    "Reinforcement Learning"
+  ]
+}

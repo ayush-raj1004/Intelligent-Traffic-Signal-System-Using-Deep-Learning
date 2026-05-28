@@ -1,0 +1,22 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "🚀 Setup and Run Dashboard",
+            "type": "shell",
+            "command": "${workspaceFolder}/setup.sh",
+            "windows": {
+                "command": "${workspaceFolder}/setup.bat"
+            },
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "presentation": {
+                "reveal": "always",
+                "panel": "new"
+            },
+            "problemMatcher": []
+        }
+    ]
+}

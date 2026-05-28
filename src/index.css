@@ -1,0 +1,25 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", system-ui, sans-serif;
+  
+  --color-dash-bg: #f8fafc;
+  --color-dash-surface: #ffffff;
+  --color-dash-border: #e2e8f0;
+  --color-dash-text-primary: #0f172a;
+  --color-dash-text-secondary: #64748b;
+  
+  --color-dash-accent: #3b82f6;
+  --color-dash-green: #22c55e;
+  --color-dash-green-bg: #f0fdf4;
+  --color-dash-red: #ef4444;
+  --color-dash-red-bg: #fef2f2;
+  --color-dash-amber: #f59e0b;
+  --color-dash-amber-bg: #fffbeb;
+}
+
+@layer base {
+  body {
+    @apply bg-dash-bg text-dash-text-primary font-sans antialiased;
+  }
+}

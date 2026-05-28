@@ -1,0 +1,42 @@
+# Intelligent Traffic Management System - Deployment
+version: '3.8'
+
+services:
+  # AI Vision Engine & Backend
+  backend:
+    build: 
+      context: ./backend_py
+      dockerfile: Dockerfile
+    ports:
+      - "8000:8000"
+    environment:
+      - DATABASE_URL=postgres://user:pass@db:5432/itms
+    depends_on:
+      - db
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: 1
+              capabilities: [gpu]
+
+  # Dashboard Frontend
+  frontend:
+    build:
+      context: ./dist
+    ports:
+      - "80:80"
+
+  # Database
+  db:
+    image: postgres:15
+    environment:
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: pass
+      POSTGRES_DB: itms
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+volumes:
+  postgres_data:
